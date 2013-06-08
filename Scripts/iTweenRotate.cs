@@ -26,7 +26,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Adds supplied Euler angles in degrees to a GameObject's rotation over time.
 	/// </summary>
-	public class iTweenRotateAdd : iTweenFluent {
+	public class iTweenRotateAdd : iTweenFluent<iTweenRotateAdd> {
 
 		public static iTweenRotateAdd Create(GameObject target) {
 			return new iTweenRotateAdd( target );
@@ -40,6 +40,10 @@ namespace iTweenFluent {
 			iTween.RotateAdd( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenRotateAdd ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the amount of Euler angles in degrees to add
 		/// to the current rotation of the GameObject.
@@ -47,7 +51,7 @@ namespace iTweenFluent {
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenRotateAdd Amount(Vector3 amount) {
-			return AddArgument<iTweenRotateAdd>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -56,7 +60,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenRotateAdd X(float x) {
-			return AddArgument<iTweenRotateAdd>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -65,7 +69,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenRotateAdd Y(float y) {
-			return AddArgument<iTweenRotateAdd>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -74,7 +78,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenRotateAdd Z(float z) {
-			return AddArgument<iTweenRotateAdd>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -84,7 +88,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenRotateAdd Space(Space space) {
-			return AddArgument<iTweenRotateAdd>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 		/// <summary>
@@ -93,7 +97,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenRotateAdd Speed(float speed) {
-			return AddArgument<iTweenRotateAdd>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -102,7 +106,7 @@ namespace iTweenFluent {
 	/// Multiplies supplied values by 360 and rotates a GameObject by calculated
 	/// amount over time.
 	/// </summary>
-	public class iTweenRotateBy : iTweenFluent {
+	public class iTweenRotateBy : iTweenFluent<iTweenRotateBy> {
 
 		public static iTweenRotateBy Create(GameObject target) {
 			return new iTweenRotateBy( target );
@@ -116,6 +120,10 @@ namespace iTweenFluent {
 			iTween.RotateBy( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenRotateBy ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the amount of Euler angles in degrees to add to the current
 		/// rotation of the GameObject.
@@ -123,7 +131,7 @@ namespace iTweenFluent {
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenRotateBy Amount(Vector3 amount) {
-			return AddArgument<iTweenRotateBy>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -132,7 +140,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenRotateBy X(float x) {
-			return AddArgument<iTweenRotateBy>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -141,7 +149,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenRotateBy Y(float y) {
-			return AddArgument<iTweenRotateBy>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -150,7 +158,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenRotateBy Z(float z) {
-			return AddArgument<iTweenRotateBy>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -160,7 +168,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenRotateBy Space(Space space) {
-			return AddArgument<iTweenRotateBy>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 		/// <summary>
@@ -169,7 +177,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenRotateBy Speed(float speed) {
-			return AddArgument<iTweenRotateBy>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -178,7 +186,7 @@ namespace iTweenFluent {
 	/// Instantly changes a GameObject's Euler angles in degrees then returns it
 	/// to it's starting rotation over time.
 	/// </summary>
-	public class iTweenRotateFrom : iTweenFluent {
+	public class iTweenRotateFrom : iTweenFluent<iTweenRotateFrom> {
 
 		public static iTweenRotateFrom Create(GameObject target) {
 			return new iTweenRotateFrom( target );
@@ -192,13 +200,17 @@ namespace iTweenFluent {
 			iTween.RotateFrom( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenRotateFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the target Euler angles in degrees to rotate to.
 		/// </summary>
 		/// <param name="rotation"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom Rotation(Transform rotation) {
-			return AddArgument<iTweenRotateFrom>( "rotation", rotation );
+			return AddArgument( "rotation", rotation );
 		}
 
 		/// <summary>
@@ -207,7 +219,7 @@ namespace iTweenFluent {
 		/// <param name="rotation"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom Rotation(Vector3 rotation) {
-			return AddArgument<iTweenRotateFrom>( "rotation", rotation );
+			return AddArgument( "rotation", rotation );
 		}
 
 		/// <summary>
@@ -216,7 +228,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom X(float x) {
-			return AddArgument<iTweenRotateFrom>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -225,7 +237,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom Y(float y) {
-			return AddArgument<iTweenRotateFrom>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -234,7 +246,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom Z(float z) {
-			return AddArgument<iTweenRotateFrom>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -244,7 +256,7 @@ namespace iTweenFluent {
 		/// <param name="isLocal"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom IsLocal(bool isLocal) {
-			return AddArgument<iTweenRotateFrom>( "islocal", isLocal );
+			return AddArgument( "islocal", isLocal );
 		}
 
 		/// <summary>
@@ -253,7 +265,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenRotateFrom Speed(float speed) {
-			return AddArgument<iTweenRotateFrom>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -261,7 +273,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Rotates a GameObject to the supplied Euler angles in degrees over time.
 	/// </summary>
-	public class iTweenRotateTo : iTweenFluent {
+	public class iTweenRotateTo : iTweenFluent<iTweenRotateTo> {
 
 		public static iTweenRotateTo Create(GameObject target) {
 			return new iTweenRotateTo( target );
@@ -275,13 +287,17 @@ namespace iTweenFluent {
 			iTween.RotateTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenRotateTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the target Euler angles in degrees to rotate to.
 		/// </summary>
 		/// <param name="rotation"></param>
 		/// <returns></returns>
 		public iTweenRotateTo Rotation(Transform rotation) {
-			return AddArgument<iTweenRotateTo>( "rotation", rotation );
+			return AddArgument( "rotation", rotation );
 		}
 
 		/// <summary>
@@ -290,7 +306,7 @@ namespace iTweenFluent {
 		/// <param name="rotation"></param>
 		/// <returns></returns>
 		public iTweenRotateTo Rotation(Vector3 rotation) {
-			return AddArgument<iTweenRotateTo>( "rotation", rotation );
+			return AddArgument( "rotation", rotation );
 		}
 
 		/// <summary>
@@ -299,7 +315,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenRotateTo X(float x) {
-			return AddArgument<iTweenRotateTo>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -308,7 +324,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenRotateTo Y(float y) {
-			return AddArgument<iTweenRotateTo>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -317,7 +333,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenRotateTo Z(float z) {
-			return AddArgument<iTweenRotateTo>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -327,7 +343,7 @@ namespace iTweenFluent {
 		/// <param name="isLocal"></param>
 		/// <returns></returns>
 		public iTweenRotateTo IsLocal(bool isLocal) {
-			return AddArgument<iTweenRotateTo>( "islocal", isLocal );
+			return AddArgument( "islocal", isLocal );
 		}
 
 		/// <summary>
@@ -336,7 +352,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenRotateTo Speed(float speed) {
-			return AddArgument<iTweenRotateTo>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -348,7 +364,7 @@ namespace iTweenFluent {
 	/// PunchRotation works best with single axis usage rather than punching
 	/// with a Vector3.
 	/// </summary>
-	public class iTweenPunchRotation : iTweenFluent {
+	public class iTweenPunchRotation : iTweenFluent<iTweenPunchRotation> {
 
 		public static iTweenPunchRotation Create(GameObject target) {
 			return new iTweenPunchRotation( target );
@@ -362,13 +378,17 @@ namespace iTweenFluent {
 			iTween.PunchRotation( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenPunchRotation ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a point in space the GameObject will animate to.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenPunchRotation Amount(Vector3 amount) {
-			return AddArgument<iTweenPunchRotation>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -377,7 +397,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenPunchRotation X(float x) {
-			return AddArgument<iTweenPunchRotation>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -386,7 +406,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenPunchRotation Y(float y) {
-			return AddArgument<iTweenPunchRotation>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -395,7 +415,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenPunchRotation Z(float z) {
-			return AddArgument<iTweenPunchRotation>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -405,7 +425,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenPunchRotation Space(Space space) {
-			return AddArgument<iTweenPunchRotation>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 	}
@@ -413,7 +433,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Randomly shakes a GameObject's rotation by a diminishing amount over time.
 	/// </summary>
-	public class iTweenShakeRotation : iTweenFluent {
+	public class iTweenShakeRotation : iTweenFluent<iTweenShakeRotation> {
 
 		public static iTweenShakeRotation Create(GameObject target) {
 			return new iTweenShakeRotation( target );
@@ -427,13 +447,17 @@ namespace iTweenFluent {
 			iTween.ShakeRotation( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenShakeRotation ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the magnitude of shake.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenShakeRotation Amount(Vector3 amount) {
-			return AddArgument<iTweenShakeRotation>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -442,7 +466,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenShakeRotation X(float x) {
-			return AddArgument<iTweenShakeRotation>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -451,7 +475,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenShakeRotation Y(float y) {
-			return AddArgument<iTweenShakeRotation>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -460,7 +484,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenShakeRotation Z(float z) {
-			return AddArgument<iTweenShakeRotation>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -470,7 +494,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenShakeRotation Space(Space space) {
-			return AddArgument<iTweenShakeRotation>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 	}

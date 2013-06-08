@@ -29,7 +29,7 @@ namespace iTweenFluent {
 	/// is attached, it will become the target of the animation.
 	/// Identical to using ColorFrom and using the "a" parameter.
 	/// </summary>
-	public class iTweenFadeFrom : iTweenFluent {
+	public class iTweenFadeFrom : iTweenFluent<iTweenFadeFrom> {
 
 		public static iTweenFadeFrom Create(GameObject target) {
 			return new iTweenFadeFrom( target );
@@ -43,13 +43,17 @@ namespace iTweenFluent {
 			iTween.FadeFrom( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenFadeFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the initial alpha value of the animation.
 		/// </summary>
 		/// <param name="alpha"></param>
 		/// <returns></returns>
 		public iTweenFadeFrom Alpha(float alpha) {
-			return AddArgument<iTweenFadeFrom>( "alpha", alpha );
+			return AddArgument( "alpha", alpha );
 		}
 
 		/// <summary>
@@ -58,7 +62,7 @@ namespace iTweenFluent {
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenFadeFrom Amount(float amount) {
-			return AddArgument<iTweenFadeFrom>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -67,7 +71,7 @@ namespace iTweenFluent {
 		/// <param name="namedValueColor"></param>
 		/// <returns></returns>
 		public iTweenFadeFrom NamedValueColor(string namedValueColor) {
-			return AddArgument<iTweenFadeFrom>( "NamedValueColor", namedValueColor );
+			return AddArgument( "NamedValueColor", namedValueColor );
 		}
 
 		/// <summary>
@@ -76,7 +80,7 @@ namespace iTweenFluent {
 		/// <param name="includeChildren"></param>
 		/// <returns></returns>
 		public iTweenFadeFrom IncludeChildren(bool includeChildren) {
-			return AddArgument<iTweenFadeFrom>( "includechildren", includeChildren );
+			return AddArgument( "includechildren", includeChildren );
 		}
 	}
 
@@ -85,7 +89,7 @@ namespace iTweenFluent {
 	/// GUITexture component is attached, it will become the target of the
 	/// animation. Identical to using ColorTo and using the "a" parameter.
 	/// </summary>
-	public class iTweenFadeTo : iTweenFluent {
+	public class iTweenFadeTo : iTweenFluent<iTweenFadeTo> {
 
 		public static iTweenFadeTo Create(GameObject target) {
 			return new iTweenFadeTo( target );
@@ -99,13 +103,17 @@ namespace iTweenFluent {
 			iTween.FadeTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenFadeTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the initial alpha value of the animation.
 		/// </summary>
 		/// <param name="alpha"></param>
 		/// <returns></returns>
 		public iTweenFadeTo Alpha(float alpha) {
-			return AddArgument<iTweenFadeTo>( "alpha", alpha );
+			return AddArgument( "alpha", alpha );
 		}
 
 		/// <summary>
@@ -114,7 +122,7 @@ namespace iTweenFluent {
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenFadeTo Amount(float amount) {
-			return AddArgument<iTweenFadeTo>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -123,7 +131,7 @@ namespace iTweenFluent {
 		/// <param name="namedValueColor"></param>
 		/// <returns></returns>
 		public iTweenFadeTo NamedValueColor(string namedValueColor) {
-			return AddArgument<iTweenFadeTo>( "NamedValueColor", namedValueColor );
+			return AddArgument( "NamedValueColor", namedValueColor );
 		}
 
 		/// <summary>
@@ -133,7 +141,7 @@ namespace iTweenFluent {
 		/// <param name="includeChildren"></param>
 		/// <returns></returns>
 		public iTweenFadeTo IncludeChildren(bool includeChildren) {
-			return AddArgument<iTweenFadeTo>( "includechildren", includeChildren );
+			return AddArgument( "includechildren", includeChildren );
 		}
 	}
 

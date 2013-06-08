@@ -27,7 +27,7 @@ namespace iTweenFluent {
 	/// Instantly changes the amount(transparency) of a camera fade
 	/// and then returns it back over time.
 	/// </summary>
-	public class iTweenCameraFadeFrom : iTweenFluent {
+	public class iTweenCameraFadeFrom : iTweenFluent<iTweenCameraFadeFrom> {
 
 		public static iTweenCameraFadeFrom Create() {
 			return new iTweenCameraFadeFrom();
@@ -41,13 +41,17 @@ namespace iTweenFluent {
 			iTween.CameraFadeFrom( new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenCameraFadeFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For how transparent the Texture2D that the camera fade uses is.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenCameraFadeFrom Amount(float amount) {
-			return AddArgument<iTweenCameraFadeFrom>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 	}
@@ -55,7 +59,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Changes the amount(transparency) of a camera fade over time.
 	/// </summary>
-	public class iTweenCameraFadeTo : iTweenFluent {
+	public class iTweenCameraFadeTo : iTweenFluent<iTweenCameraFadeTo> {
 
 		public static iTweenCameraFadeTo Create() {
 			return new iTweenCameraFadeTo();
@@ -69,13 +73,17 @@ namespace iTweenFluent {
 			iTween.CameraFadeTo( new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenCameraFadeTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For how transparent the Texture2D that the camera fade uses is.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenCameraFadeTo Amount(float amount) {
-			return AddArgument<iTweenCameraFadeTo>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 	}

@@ -29,7 +29,7 @@ namespace iTweenFluent {
 	/// callback that accepts the same type as the supplied 'from' and 'to'
 	/// properties.
 	/// </summary>
-	public class iTweenValueTo : iTweenFluent {
+	public class iTweenValueTo : iTweenFluent<iTweenValueTo> {
 
 		public static iTweenValueTo Create(GameObject target) {
 			return new iTweenValueTo( target );
@@ -43,13 +43,17 @@ namespace iTweenFluent {
 			iTween.ValueTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenValueTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the starting value.
 		/// </summary>
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo From(float from) {
-			return AddArgument<iTweenValueTo>( "from", from );
+			return AddArgument( "from", from );
 		}
 
 		/// <summary>
@@ -58,7 +62,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo From(Vector3 from) {
-			return AddArgument<iTweenValueTo>( "from", from );
+			return AddArgument( "from", from );
 		}
 
 		/// <summary>
@@ -67,7 +71,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo From(Vector2 from) {
-			return AddArgument<iTweenValueTo>( "from", from );
+			return AddArgument( "from", from );
 		}
 
 		/// <summary>
@@ -76,7 +80,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo From(Color from) {
-			return AddArgument<iTweenValueTo>( "from", from );
+			return AddArgument( "from", from );
 		}
 
 		/// <summary>
@@ -85,7 +89,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo From(Rect from) {
-			return AddArgument<iTweenValueTo>( "from", from );
+			return AddArgument( "from", from );
 		}
 
 		/// <summary>
@@ -94,7 +98,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo To(float to) {
-			return AddArgument<iTweenValueTo>( "to", to );
+			return AddArgument( "to", to );
 		}
 
 		/// <summary>
@@ -103,7 +107,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo To(Vector3 to) {
-			return AddArgument<iTweenValueTo>( "to", to );
+			return AddArgument( "to", to );
 		}
 
 		/// <summary>
@@ -112,7 +116,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo To(Vector2 to) {
-			return AddArgument<iTweenValueTo>( "to", to );
+			return AddArgument( "to", to );
 		}
 
 		/// <summary>
@@ -121,7 +125,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo To(Color to) {
-			return AddArgument<iTweenValueTo>( "to", to );
+			return AddArgument( "to", to );
 		}
 
 		/// <summary>
@@ -130,7 +134,7 @@ namespace iTweenFluent {
 		/// <param name="from"></param>
 		/// <returns></returns>
 		public iTweenValueTo To(Rect to) {
-			return AddArgument<iTweenValueTo>( "to", to );
+			return AddArgument( "to", to );
 		}
 
 		/// <summary>
@@ -140,7 +144,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenValueTo Speed(float speed) {
-			return AddArgument<iTweenValueTo>( "time", speed );
+			return AddArgument( "time", speed );
 		}
 
 	}

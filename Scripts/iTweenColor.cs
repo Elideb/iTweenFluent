@@ -29,7 +29,7 @@ namespace iTweenFluent {
 	/// If a Light, GUIText or GUITexture component is attached,
 	/// it will become the target of the animation.
 	/// </summary>
-	public class iTweenColorFrom : iTweenFluent {
+	public class iTweenColorFrom : iTweenFluent<iTweenColorFrom> {
 
 		public static iTweenColorFrom Create(GameObject target) {
 			return new iTweenColorFrom( target );
@@ -43,13 +43,17 @@ namespace iTweenFluent {
 			iTween.ColorFrom( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenColorFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// The color to fade the object to.
 		/// </summary>
 		/// <param name="color"></param>
 		/// <returns></returns>
 		public iTweenColorFrom Color(Color color) {
-			return AddArgument<iTweenColorFrom>( "color", color );
+			return AddArgument( "color", color );
 		}
 
 		/// <summary>
@@ -58,7 +62,7 @@ namespace iTweenFluent {
 		/// <param name="r"></param>
 		/// <returns></returns>
 		public iTweenColorFrom R(float r) {
-			return AddArgument<iTweenColorFrom>( "r", r );
+			return AddArgument( "r", r );
 		}
 
 		/// <summary>
@@ -67,7 +71,7 @@ namespace iTweenFluent {
 		/// <param name="g"></param>
 		/// <returns></returns>
 		public iTweenColorFrom G(float g) {
-			return AddArgument<iTweenColorFrom>( "g", g );
+			return AddArgument( "g", g );
 		}
 
 		/// <summary>
@@ -76,7 +80,7 @@ namespace iTweenFluent {
 		/// <param name="b"></param>
 		/// <returns></returns>
 		public iTweenColorFrom B(float b) {
-			return AddArgument<iTweenColorFrom>( "b", b );
+			return AddArgument( "b", b );
 		}
 
 		/// <summary>
@@ -85,7 +89,7 @@ namespace iTweenFluent {
 		/// <param name="a"></param>
 		/// <returns></returns>
 		public iTweenColorFrom A(float a) {
-			return AddArgument<iTweenColorFrom>( "a", a );
+			return AddArgument( "a", a );
 		}
 
 		/// <summary>
@@ -94,7 +98,7 @@ namespace iTweenFluent {
 		/// <param name="namedColorValue"></param>
 		/// <returns></returns>
 		public iTweenColorFrom NamedColorValue(string namedColorValue) {
-			return AddArgument<iTweenColorFrom>( "NamedColorValue", namedColorValue );
+			return AddArgument( "NamedColorValue", namedColorValue );
 		}
 
 		/// <summary>
@@ -104,7 +108,7 @@ namespace iTweenFluent {
 		/// <param name="includeChildren"></param>
 		/// <returns></returns>
 		public iTweenColorFrom IncludeChildren(bool includeChildren) {
-			return AddArgument<iTweenColorFrom>( "includechildren", includeChildren );
+			return AddArgument( "includechildren", includeChildren );
 		}
 	}
 
@@ -113,7 +117,7 @@ namespace iTweenFluent {
 	/// If a Light, GUIText or GUITexture component is attached,
 	/// they will become the target of the animation.
 	/// </summary>
-	public class iTweenColorTo : iTweenFluent {
+	public class iTweenColorTo : iTweenFluent<iTweenColorTo> {
 
 		public static iTweenColorTo Create(GameObject target) {
 			return new iTweenColorTo( target );
@@ -127,13 +131,17 @@ namespace iTweenFluent {
 			iTween.ColorTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenColorTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// The color to fade the object to.
 		/// </summary>
 		/// <param name="color"></param>
 		/// <returns></returns>
 		public iTweenColorTo Color(Color color) {
-			return AddArgument<iTweenColorTo>( "color", color );
+			return AddArgument( "color", color );
 		}
 
 		/// <summary>
@@ -142,7 +150,7 @@ namespace iTweenFluent {
 		/// <param name="r"></param>
 		/// <returns></returns>
 		public iTweenColorTo R(float r) {
-			return AddArgument<iTweenColorTo>( "r", r );
+			return AddArgument( "r", r );
 		}
 
 		/// <summary>
@@ -151,7 +159,7 @@ namespace iTweenFluent {
 		/// <param name="g"></param>
 		/// <returns></returns>
 		public iTweenColorTo G(float g) {
-			return AddArgument<iTweenColorTo>( "g", g );
+			return AddArgument( "g", g );
 		}
 
 		/// <summary>
@@ -160,7 +168,7 @@ namespace iTweenFluent {
 		/// <param name="b"></param>
 		/// <returns></returns>
 		public iTweenColorTo B(float b) {
-			return AddArgument<iTweenColorTo>( "b", b );
+			return AddArgument( "b", b );
 		}
 
 		/// <summary>
@@ -169,7 +177,7 @@ namespace iTweenFluent {
 		/// <param name="a"></param>
 		/// <returns></returns>
 		public iTweenColorTo A(float a) {
-			return AddArgument<iTweenColorTo>( "a", a );
+			return AddArgument( "a", a );
 		}
 
 		/// <summary>
@@ -178,7 +186,7 @@ namespace iTweenFluent {
 		/// <param name="namedColorValue"></param>
 		/// <returns></returns>
 		public iTweenColorTo NamedColorValue(string namedColorValue) {
-			return AddArgument<iTweenColorTo>( "NamedColorValue", namedColorValue );
+			return AddArgument( "NamedColorValue", namedColorValue );
 		}
 
 		/// <summary>
@@ -188,7 +196,7 @@ namespace iTweenFluent {
 		/// <param name="includeChildren"></param>
 		/// <returns></returns>
 		public iTweenColorTo IncludeChildren(bool includeChildren) {
-			return AddArgument<iTweenColorTo>( "includechildren", includeChildren );
+			return AddArgument( "includechildren", includeChildren );
 		}
 	}
 

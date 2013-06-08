@@ -26,7 +26,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Translates a GameObject's position over time.
 	/// </summary>
-	public class iTweenMoveAdd : iTweenFluent {
+	public class iTweenMoveAdd : iTweenFluent<iTweenMoveAdd> {
 
 		public static iTweenMoveAdd Create(GameObject target) {
 			return new iTweenMoveAdd( target );
@@ -40,13 +40,17 @@ namespace iTweenFluent {
 			iTween.MoveAdd( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenMoveAdd ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a point in space the GameObject will animate to.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd Amount(Vector3 amount) {
-			return AddArgument<iTweenMoveAdd>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -55,7 +59,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd X(float x) {
-			return AddArgument<iTweenMoveAdd>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -64,7 +68,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd Y(float y) {
-			return AddArgument<iTweenMoveAdd>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -73,7 +77,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd Z(float z) {
-			return AddArgument<iTweenMoveAdd>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -83,7 +87,7 @@ namespace iTweenFluent {
 		/// <param name="orientToPath"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd OrientToPath(bool orientToPath) {
-			return AddArgument<iTweenMoveAdd>( "orienttopath", orientToPath );
+			return AddArgument( "orienttopath", orientToPath );
 		}
 
 		/// <summary>
@@ -92,7 +96,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenMoveAdd>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -101,7 +105,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenMoveAdd>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -111,7 +115,7 @@ namespace iTweenFluent {
 		/// <param name="lookTime"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd LookTime(float lookTime) {
-			return AddArgument<iTweenMoveAdd>( "looktime", lookTime );
+			return AddArgument( "looktime", lookTime );
 		}
 
 		/// <summary>
@@ -120,7 +124,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd Axis(string axis) {
-			return AddArgument<iTweenMoveAdd>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 		/// <summary>
@@ -130,7 +134,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd Space(Space space) {
-			return AddArgument<iTweenMoveAdd>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 		/// <summary>
@@ -139,7 +143,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenMoveAdd Speed(float speed) {
-			return AddArgument<iTweenMoveAdd>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -147,7 +151,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Adds the supplied coordinates to a GameObject's position.
 	/// </summary>
-	public class iTweenMoveBy : iTweenFluent {
+	public class iTweenMoveBy : iTweenFluent<iTweenMoveBy> {
 
 		public static iTweenMoveBy Create(GameObject target) {
 			return new iTweenMoveBy( target );
@@ -161,13 +165,17 @@ namespace iTweenFluent {
 			iTween.MoveBy( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenMoveBy ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a point in space the GameObject will animate to.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenMoveBy Amount(Vector3 amount) {
-			return AddArgument<iTweenMoveBy>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -176,7 +184,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenMoveBy X(float x) {
-			return AddArgument<iTweenMoveBy>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -185,7 +193,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenMoveBy Y(float y) {
-			return AddArgument<iTweenMoveBy>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -194,7 +202,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenMoveBy Z(float z) {
-			return AddArgument<iTweenMoveBy>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -204,7 +212,7 @@ namespace iTweenFluent {
 		/// <param name="orientToPath"></param>
 		/// <returns></returns>
 		public iTweenMoveBy OrientToPath(bool orientToPath) {
-			return AddArgument<iTweenMoveBy>( "orienttopath", orientToPath );
+			return AddArgument( "orienttopath", orientToPath );
 		}
 
 		/// <summary>
@@ -213,7 +221,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveBy LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenMoveBy>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -222,7 +230,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveBy LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenMoveBy>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -232,7 +240,7 @@ namespace iTweenFluent {
 		/// <param name="lookTime"></param>
 		/// <returns></returns>
 		public iTweenMoveBy LookTime(float lookTime) {
-			return AddArgument<iTweenMoveBy>( "looktime", lookTime );
+			return AddArgument( "looktime", lookTime );
 		}
 
 		/// <summary>
@@ -241,7 +249,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenMoveBy Axis(string axis) {
-			return AddArgument<iTweenMoveBy>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 		/// <summary>
@@ -251,7 +259,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenMoveBy Space(Space space) {
-			return AddArgument<iTweenMoveBy>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 		/// <summary>
@@ -260,7 +268,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenMoveBy Speed(float speed) {
-			return AddArgument<iTweenMoveBy>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -269,7 +277,7 @@ namespace iTweenFluent {
 	/// Instantly changes a GameObject's position to a supplied destination then
 	/// returns it to it's starting position over time.
 	/// </summary>
-	public class iTweenMoveFrom : iTweenFluent {
+	public class iTweenMoveFrom : iTweenFluent<iTweenMoveFrom> {
 
 		public static iTweenMoveFrom Create(GameObject target) {
 			return new iTweenMoveFrom( target );
@@ -283,13 +291,17 @@ namespace iTweenFluent {
 			iTween.MoveFrom( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenMoveFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a point in space the GameObject will animate to.
 		/// </summary>
 		/// <param name="position"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Position(Transform position) {
-			return AddArgument<iTweenMoveFrom>( "position", position );
+			return AddArgument( "position", position );
 		}
 
 		/// <summary>
@@ -298,7 +310,7 @@ namespace iTweenFluent {
 		/// <param name="position"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Position(Vector3 position) {
-			return AddArgument<iTweenMoveFrom>( "position", position );
+			return AddArgument( "position", position );
 		}
 
 		/// <summary>
@@ -308,7 +320,7 @@ namespace iTweenFluent {
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Path(Transform[] path) {
-			return AddArgument<iTweenMoveFrom>( "path", path );
+			return AddArgument( "path", path );
 		}
 
 		/// <summary>
@@ -318,7 +330,7 @@ namespace iTweenFluent {
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Path(Vector3[] path) {
-			return AddArgument<iTweenMoveFrom>( "path", path );
+			return AddArgument( "path", path );
 		}
 
 		/// <summary>
@@ -328,7 +340,7 @@ namespace iTweenFluent {
 		/// <param name="moveToPath"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom MoveToPath(bool moveToPath) {
-			return AddArgument<iTweenMoveFrom>( "movetopath", moveToPath );
+			return AddArgument( "movetopath", moveToPath );
 		}
 
 		/// <summary>
@@ -337,7 +349,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom X(float x) {
-			return AddArgument<iTweenMoveFrom>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -346,7 +358,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Y(float y) {
-			return AddArgument<iTweenMoveFrom>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -355,7 +367,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Z(float z) {
-			return AddArgument<iTweenMoveFrom>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -365,7 +377,7 @@ namespace iTweenFluent {
 		/// <param name="orientToPath"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom OrientToPath(bool orientToPath) {
-			return AddArgument<iTweenMoveFrom>( "orienttopath", orientToPath );
+			return AddArgument( "orienttopath", orientToPath );
 		}
 
 		/// <summary>
@@ -374,7 +386,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenMoveFrom>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -383,7 +395,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenMoveFrom>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -393,7 +405,7 @@ namespace iTweenFluent {
 		/// <param name="lookTime"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom LookTime(float lookTime) {
-			return AddArgument<iTweenMoveFrom>( "looktime", lookTime );
+			return AddArgument( "looktime", lookTime );
 		}
 
 		/// <summary>
@@ -404,7 +416,7 @@ namespace iTweenFluent {
 		/// <param name="lookAhead"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom LookAhead(float lookAhead) {
-			return AddArgument<iTweenMoveFrom>( "lookahead", lookAhead );
+			return AddArgument( "lookahead", lookAhead );
 		}
 
 		/// <summary>
@@ -413,7 +425,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Axis(string axis) {
-			return AddArgument<iTweenMoveFrom>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 		/// <summary>
@@ -423,7 +435,7 @@ namespace iTweenFluent {
 		/// <param name="isLocal"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom IsLocal(bool isLocal) {
-			return AddArgument<iTweenMoveFrom>( "islocal", isLocal );
+			return AddArgument( "islocal", isLocal );
 		}
 
 		/// <summary>
@@ -432,7 +444,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenMoveFrom Speed(float speed) {
-			return AddArgument<iTweenMoveFrom>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -440,7 +452,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Changes a GameObject's position over time to a supplied destination.
 	/// </summary>
-	public class iTweenMoveTo : iTweenFluent {
+	public class iTweenMoveTo : iTweenFluent<iTweenMoveTo> {
 
 		public static iTweenMoveTo Create(GameObject target) {
 			return new iTweenMoveTo( target );
@@ -454,13 +466,17 @@ namespace iTweenFluent {
 			iTween.MoveTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenMoveTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a point in space the GameObject will animate to.
 		/// </summary>
 		/// <param name="position"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Position(Transform position) {
-			return AddArgument<iTweenMoveTo>( "position", position );
+			return AddArgument( "position", position );
 		}
 
 		/// <summary>
@@ -469,7 +485,7 @@ namespace iTweenFluent {
 		/// <param name="position"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Position(Vector3 position) {
-			return AddArgument<iTweenMoveTo>( "position", position );
+			return AddArgument( "position", position );
 		}
 
 		/// <summary>
@@ -478,7 +494,7 @@ namespace iTweenFluent {
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Path(Transform[] path) {
-			return AddArgument<iTweenMoveTo>( "path", path );
+			return AddArgument( "path", path );
 		}
 
 		/// <summary>
@@ -487,7 +503,7 @@ namespace iTweenFluent {
 		/// <param name="path"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Path(Vector3[] path) {
-			return AddArgument<iTweenMoveTo>( "path", path );
+			return AddArgument( "path", path );
 		}
 
 		/// <summary>
@@ -497,7 +513,7 @@ namespace iTweenFluent {
 		/// <param name="moveToPath"></param>
 		/// <returns></returns>
 		public iTweenMoveTo MoveToPath(bool moveToPath) {
-			return AddArgument<iTweenMoveTo>( "movetopath", moveToPath );
+			return AddArgument( "movetopath", moveToPath );
 		}
 
 		/// <summary>
@@ -506,7 +522,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenMoveTo X(float x) {
-			return AddArgument<iTweenMoveTo>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -515,7 +531,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Y(float y) {
-			return AddArgument<iTweenMoveTo>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -524,7 +540,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Z(float z) {
-			return AddArgument<iTweenMoveTo>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -534,7 +550,7 @@ namespace iTweenFluent {
 		/// <param name="orientToPath"></param>
 		/// <returns></returns>
 		public iTweenMoveTo OrientToPath(bool orientToPath) {
-			return AddArgument<iTweenMoveTo>( "orienttopath", orientToPath );
+			return AddArgument( "orienttopath", orientToPath );
 		}
 
 		/// <summary>
@@ -543,7 +559,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveTo LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenMoveTo>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -552,7 +568,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenMoveTo LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenMoveTo>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -562,7 +578,7 @@ namespace iTweenFluent {
 		/// <param name="lookTime"></param>
 		/// <returns></returns>
 		public iTweenMoveTo LookTime(float lookTime) {
-			return AddArgument<iTweenMoveTo>( "looktime", lookTime );
+			return AddArgument( "looktime", lookTime );
 		}
 
 		/// <summary>
@@ -573,7 +589,7 @@ namespace iTweenFluent {
 		/// <param name="lookAhead"></param>
 		/// <returns></returns>
 		public iTweenMoveTo LookAhead(float lookAhead) {
-			return AddArgument<iTweenMoveTo>( "lookahead", lookAhead );
+			return AddArgument( "lookahead", lookAhead );
 		}
 
 		/// <summary>
@@ -582,7 +598,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Axis(string axis) {
-			return AddArgument<iTweenMoveTo>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 		/// <summary>
@@ -592,7 +608,7 @@ namespace iTweenFluent {
 		/// <param name="isLocal"></param>
 		/// <returns></returns>
 		public iTweenMoveTo IsLocal(bool isLocal) {
-			return AddArgument<iTweenMoveTo>( "islocal", isLocal );
+			return AddArgument( "islocal", isLocal );
 		}
 
 		/// <summary>
@@ -601,7 +617,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenMoveTo Speed(float speed) {
-			return AddArgument<iTweenMoveTo>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -610,7 +626,7 @@ namespace iTweenFluent {
 	/// Applies a jolt of force to a GameObject's position and wobbles it
 	/// back to its initial position.
 	/// </summary>
-	public class iTweenPunchPosition : iTweenFluent {
+	public class iTweenPunchPosition : iTweenFluent<iTweenPunchPosition> {
 
 		public static iTweenPunchPosition Create(GameObject target) {
 			return new iTweenPunchPosition( target );
@@ -624,13 +640,17 @@ namespace iTweenFluent {
 			iTween.PunchPosition( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenPunchPosition ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a point in space the GameObject will animate to.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition Amount(Vector3 amount) {
-			return AddArgument<iTweenPunchPosition>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -639,7 +659,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition X(float x) {
-			return AddArgument<iTweenPunchPosition>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -648,7 +668,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition Y(float y) {
-			return AddArgument<iTweenPunchPosition>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -657,7 +677,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition Z(float z) {
-			return AddArgument<iTweenPunchPosition>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -667,7 +687,7 @@ namespace iTweenFluent {
 		/// <param name="space"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition Space(Space space) {
-			return AddArgument<iTweenPunchPosition>( "space", space );
+			return AddArgument( "space", space );
 		}
 
 		/// <summary>
@@ -676,7 +696,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenPunchPosition>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -685,7 +705,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenPunchPosition>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -695,7 +715,7 @@ namespace iTweenFluent {
 		/// <param name="lookTime"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition LookTime(float lookTime) {
-			return AddArgument<iTweenPunchPosition>( "looktime", lookTime );
+			return AddArgument( "looktime", lookTime );
 		}
 
 		/// <summary>
@@ -704,7 +724,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenPunchPosition Axis(string axis) {
-			return AddArgument<iTweenPunchPosition>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 	}
@@ -712,7 +732,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Randomly shakes a GameObject's position by a diminishing amount over time.
 	/// </summary>
-	public class iTweenShakePosition : iTweenFluent {
+	public class iTweenShakePosition : iTweenFluent<iTweenShakePosition> {
 
 		public static iTweenShakePosition Create(GameObject target) {
 			return new iTweenShakePosition( target );
@@ -726,13 +746,17 @@ namespace iTweenFluent {
 			iTween.ShakePosition( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenShakePosition ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For the magnitude of shake.
 		/// </summary>
 		/// <param name="amount"></param>
 		/// <returns></returns>
 		public iTweenShakePosition Amount(Vector3 amount) {
-			return AddArgument<iTweenShakePosition>( "amount", amount );
+			return AddArgument( "amount", amount );
 		}
 
 		/// <summary>
@@ -741,7 +765,7 @@ namespace iTweenFluent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public iTweenShakePosition X(float x) {
-			return AddArgument<iTweenShakePosition>( "x", x );
+			return AddArgument( "x", x );
 		}
 
 		/// <summary>
@@ -750,7 +774,7 @@ namespace iTweenFluent {
 		/// <param name="y"></param>
 		/// <returns></returns>
 		public iTweenShakePosition Y(float y) {
-			return AddArgument<iTweenShakePosition>( "y", y );
+			return AddArgument( "y", y );
 		}
 
 		/// <summary>
@@ -759,7 +783,7 @@ namespace iTweenFluent {
 		/// <param name="z"></param>
 		/// <returns></returns>
 		public iTweenShakePosition Z(float z) {
-			return AddArgument<iTweenShakePosition>( "z", z );
+			return AddArgument( "z", z );
 		}
 
 		/// <summary>
@@ -769,7 +793,7 @@ namespace iTweenFluent {
 		/// <param name="isLocal"></param>
 		/// <returns></returns>
 		public iTweenShakePosition IsLocal(bool isLocal) {
-			return AddArgument<iTweenShakePosition>( "islocal", isLocal );
+			return AddArgument( "islocal", isLocal );
 		}
 
 		/// <summary>
@@ -779,7 +803,7 @@ namespace iTweenFluent {
 		/// <param name="orientToPath"></param>
 		/// <returns></returns>
 		public iTweenShakePosition OrientToPath(bool orientToPath) {
-			return AddArgument<iTweenShakePosition>( "orienttopath", orientToPath );
+			return AddArgument( "orienttopath", orientToPath );
 		}
 
 		/// <summary>
@@ -788,7 +812,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenShakePosition LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenShakePosition>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -797,7 +821,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenShakePosition LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenShakePosition>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -807,7 +831,7 @@ namespace iTweenFluent {
 		/// <param name="lookTime"></param>
 		/// <returns></returns>
 		public iTweenShakePosition LookTime(float lookTime) {
-			return AddArgument<iTweenShakePosition>( "looktime", lookTime );
+			return AddArgument( "looktime", lookTime );
 		}
 
 		/// <summary>
@@ -816,7 +840,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenShakePosition Axis(string axis) {
-			return AddArgument<iTweenShakePosition>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 	}

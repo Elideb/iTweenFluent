@@ -28,7 +28,7 @@ namespace iTweenFluent {
 	/// The methods from this class should be called at the end,
 	/// or the result cast back to the desired class.
 	/// </summary>
-	public abstract class iTweenFluent {
+	public abstract class iTweenFluent<TSelf> {
 		private GameObject target;
 
 		/// <summary>
@@ -49,16 +49,18 @@ namespace iTweenFluent {
 
 		public abstract void Launch();
 
+		protected abstract TSelf ThisAsTSelf();
+
 		/// <summary>
 		/// Change the target set for the tween.
 		/// Useful to apply the same tween on several elements.
 		/// </summary>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		public iTweenFluent SetTarget(GameObject target) {
+		public TSelf SetTarget(GameObject target) {
 			Target = target;
 
-			return this;
+			return ThisAsTSelf();
 		}
 
 		/// <summary>
@@ -66,7 +68,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		public iTweenFluent Name(string name) {
+		public TSelf Name(string name) {
 			return AddArgument( "name", name );
 		}
 
@@ -77,7 +79,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="functionName"></param>
 		/// <returns></returns>
-		public iTweenFluent OnStart(string functionName) {
+		public TSelf OnStart(string functionName) {
 			return AddArgument( "onstart", functionName );
 		}
 
@@ -86,7 +88,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		public iTweenFluent OnStartTarget(object target) {
+		public TSelf OnStartTarget(object target) {
 			return AddArgument( "onstarttarget", target );
 		}
 
@@ -95,7 +97,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public iTweenFluent OnStartParams(object parameters) {
+		public TSelf OnStartParams(object parameters) {
 			return AddArgument( "onstartparams", parameters );
 		}
 
@@ -108,7 +110,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="functionName"></param>
 		/// <returns></returns>
-		public iTweenFluent OnUpdate(string functionName) {
+		public TSelf OnUpdate(string functionName) {
 			return AddArgument( "onupdate", functionName );
 		}
 
@@ -117,7 +119,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		public iTweenFluent OnUpdateTarget(object target) {
+		public TSelf OnUpdateTarget(object target) {
 			return AddArgument( "onupdatetarget", target );
 		}
 
@@ -126,7 +128,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public iTweenFluent OnUpdateParams(object parameters) {
+		public TSelf OnUpdateParams(object parameters) {
 			return AddArgument( "onupdateparams", parameters );
 		}
 
@@ -139,7 +141,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="functionName"></param>
 		/// <returns></returns>
-		public iTweenFluent OnComplete(string functionName) {
+		public TSelf OnComplete(string functionName) {
 			return AddArgument( "oncomplete", functionName );
 		}
 
@@ -148,7 +150,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		public iTweenFluent OnCompleteTarget(object target) {
+		public TSelf OnCompleteTarget(object target) {
 			return AddArgument( "oncompletetarget", target );
 		}
 
@@ -157,7 +159,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public iTweenFluent OnCompleteParams(object parameters) {
+		public TSelf OnCompleteParams(object parameters) {
 			return AddArgument( "oncompleteparams", parameters );
 		}
 
@@ -170,7 +172,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="ignoreTimeScale"></param>
 		/// <returns></returns>
-		public iTweenFluent IgnoreTimeScale(bool ignoreTimeScale) {
+		public TSelf IgnoreTimeScale(bool ignoreTimeScale) {
 			return AddArgument( "ignoretimescale", ignoreTimeScale );
 		}
 
@@ -179,7 +181,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="time"></param>
 		/// <returns></returns>
-		public iTweenFluent Time(float time) {
+		public TSelf Time(float time) {
 			return AddArgument( "time", time );
 		}
 
@@ -188,7 +190,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="delay"></param>
 		/// <returns></returns>
-		public iTweenFluent Delay(float delay) {
+		public TSelf Delay(float delay) {
 			return AddArgument( "delay", delay );
 		}
 
@@ -197,7 +199,7 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="easeType"></param>
 		/// <returns></returns>
-		public iTweenFluent EaseType(iTween.EaseType easeType) {
+		public TSelf EaseType(iTween.EaseType easeType) {
 			return AddArgument( "easetype", easeType );
 		}
 
@@ -207,21 +209,16 @@ namespace iTweenFluent {
 		/// </summary>
 		/// <param name="loopType"></param>
 		/// <returns></returns>
-		public iTweenFluent LoopType(iTween.LoopType loopType) {
+		public TSelf LoopType(iTween.LoopType loopType) {
 			return AddArgument( "looptype", loopType );
 		}
 
-		protected iTweenFluent AddArgument(string arg, object value) {
+		protected TSelf AddArgument(string arg, object value) {
 			arguments[arg] = value;
 
-			return this;
+			return ThisAsTSelf();
 		}
 
-		protected T AddArgument<T>(string arg, object value) where T : iTweenFluent {
-			arguments[arg] = value;
-
-			return this as T;
-		}
 	}
 
 }

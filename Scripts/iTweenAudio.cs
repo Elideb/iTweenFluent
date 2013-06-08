@@ -29,7 +29,7 @@ namespace iTweenFluent {
 	/// Default AudioSource attached to GameObject will be used
 	/// (if one exists) if not supplied.
 	/// </summary>
-	public class iTweenAudioFrom : iTweenFluent {
+	public class iTweenAudioFrom : iTweenFluent<iTweenAudioFrom> {
 
 		public static iTweenAudioFrom Create(GameObject target) {
 			return new iTweenAudioFrom( target );
@@ -43,13 +43,17 @@ namespace iTweenFluent {
 			iTween.AudioFrom( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenAudioFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For which AudioSource to use.
 		/// </summary>
 		/// <param name="audioSource"></param>
 		/// <returns></returns>
 		public iTweenAudioFrom AudioSource(AudioSource audioSource) {
-			return AddArgument<iTweenAudioFrom>( "audiosource", audioSource );
+			return AddArgument( "audiosource", audioSource );
 		}
 
 		/// <summary>
@@ -58,7 +62,7 @@ namespace iTweenFluent {
 		/// <param name="volume"></param>
 		/// <returns></returns>
 		public iTweenAudioFrom Volume(float volume) {
-			return AddArgument<iTweenAudioFrom>( "volume", volume );
+			return AddArgument( "volume", volume );
 		}
 
 		/// <summary>
@@ -67,7 +71,7 @@ namespace iTweenFluent {
 		/// <param name="pitch"></param>
 		/// <returns></returns>
 		public iTweenAudioFrom Pitch(float pitch) {
-			return AddArgument<iTweenAudioFrom>( "pitch", pitch );
+			return AddArgument( "pitch", pitch );
 		}
 
 	}
@@ -77,7 +81,7 @@ namespace iTweenFluent {
 	/// Default AudioSource attached to GameObject will be used
 	/// (if one exists) if not supplied.
 	/// </summary>
-	public class iTweenAudioTo: iTweenFluent {
+	public class iTweenAudioTo: iTweenFluent<iTweenAudioTo> {
 
 		public static iTweenAudioTo Create(GameObject target) {
 			return new iTweenAudioTo( target );
@@ -91,13 +95,17 @@ namespace iTweenFluent {
 			iTween.AudioTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenAudioTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For which AudioSource to use.
 		/// </summary>
 		/// <param name="audioSource"></param>
 		/// <returns></returns>
 		public iTweenAudioTo AudioSource(AudioSource audioSource) {
-			return AddArgument<iTweenAudioTo>( "audiosource", audioSource );
+			return AddArgument( "audiosource", audioSource );
 		}
 
 		/// <summary>
@@ -106,7 +114,7 @@ namespace iTweenFluent {
 		/// <param name="volume"></param>
 		/// <returns></returns>
 		public iTweenAudioTo Volume(float volume) {
-			return AddArgument<iTweenAudioTo>( "volume", volume );
+			return AddArgument( "volume", volume );
 		}
 
 		/// <summary>
@@ -115,7 +123,7 @@ namespace iTweenFluent {
 		/// <param name="pitch"></param>
 		/// <returns></returns>
 		public iTweenAudioTo Pitch(float pitch) {
-			return AddArgument<iTweenAudioTo>( "pitch", pitch );
+			return AddArgument( "pitch", pitch );
 		}
 
 	}

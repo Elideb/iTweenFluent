@@ -27,7 +27,7 @@ namespace iTweenFluent {
 	/// Instantly rotates a GameObject to look at the supplied Vector3 then
 	/// returns it to it's starting rotation over time.
 	/// </summary>
-	public class iTweenLookFrom : iTweenFluent {
+	public class iTweenLookFrom : iTweenFluent<iTweenLookFrom> {
 
 		public static iTweenLookFrom Create(GameObject target) {
 			return new iTweenLookFrom( target );
@@ -41,13 +41,17 @@ namespace iTweenFluent {
 			iTween.LookFrom( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenLookFrom ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a target the GameObject will look at.
 		/// </summary>
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenLookFrom LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenLookFrom>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -56,7 +60,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenLookFrom LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenLookFrom>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -65,7 +69,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenLookFrom Axis(string axis) {
-			return AddArgument<iTweenLookFrom>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 		/// <summary>
@@ -74,7 +78,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenLookFrom Speed(float speed) {
-			return AddArgument<iTweenLookFrom>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
@@ -82,7 +86,7 @@ namespace iTweenFluent {
 	/// <summary>
 	/// Rotates a GameObject to look at a supplied Transform or Vector3 over time.
 	/// </summary>
-	public class iTweenLookTo : iTweenFluent {
+	public class iTweenLookTo : iTweenFluent<iTweenLookTo> {
 
 		public static iTweenLookTo Create(GameObject target) {
 			return new iTweenLookTo( target );
@@ -96,13 +100,17 @@ namespace iTweenFluent {
 			iTween.LookTo( Target, new System.Collections.Hashtable( Arguments ) );
 		}
 
+		protected override iTweenLookTo ThisAsTSelf() {
+			return this;
+		}
+
 		/// <summary>
 		/// For a target the GameObject will look at.
 		/// </summary>
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenLookTo LookTarget(Transform lookTarget) {
-			return AddArgument<iTweenLookTo>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -111,7 +119,7 @@ namespace iTweenFluent {
 		/// <param name="lookTarget"></param>
 		/// <returns></returns>
 		public iTweenLookTo LookTarget(Vector3 lookTarget) {
-			return AddArgument<iTweenLookTo>( "looktarget", lookTarget );
+			return AddArgument( "looktarget", lookTarget );
 		}
 
 		/// <summary>
@@ -120,7 +128,7 @@ namespace iTweenFluent {
 		/// <param name="axis"></param>
 		/// <returns></returns>
 		public iTweenLookTo Axis(string axis) {
-			return AddArgument<iTweenLookTo>( "axis", axis );
+			return AddArgument( "axis", axis );
 		}
 
 		/// <summary>
@@ -129,7 +137,7 @@ namespace iTweenFluent {
 		/// <param name="speed"></param>
 		/// <returns></returns>
 		public iTweenLookTo Speed(float speed) {
-			return AddArgument<iTweenLookTo>( "speed", speed );
+			return AddArgument( "speed", speed );
 		}
 
 	}
