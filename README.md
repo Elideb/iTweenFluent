@@ -176,12 +176,6 @@ Compared to using iTween:
         }
     }
 
-Notes
------
-For the time being, classes derived from iTweenFluent don't hide all of its methods. Calling them implies the fluent cascade will fall back to iTweenFluent, instead of returning the calling class' type. To avoid it, I recommend calling general methods (OnStart, IgnoreTimeScale, etc.) after the parameters specific to the desired tween have been established.
-
-In a future update I'll perform the overwrite of all methods, or at least provide an iTweenFluent.Cast<T>() method.
-
 License
 -------
 This project is released under the MIT License. Check the LICENSE file included
