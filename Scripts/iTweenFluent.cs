@@ -47,7 +47,7 @@ namespace iTweenFluent {
 			this.target = target;
 		}
 
-		abstract public void Launch();
+		public abstract void Launch();
 
 		/// <summary>
 		/// Change the target set for the tween.
